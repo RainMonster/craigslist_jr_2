@@ -1,0 +1,20 @@
+<p> Welcome to your new Post! </p>
+
+  At this URL you can update or delete your post.<br>
+  Please keep this URL in your records.<br>
+<br>
+  If you wish to update your post, do so here:<br>
+  <form action="/post/<%= @post.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="title" placeholder="<%=@post.title%>"><br>
+    <textarea name="content"><%= @post.content %></textarea><br>
+    <input type="submit">
+  </form>
+  <br>
+  If you wish to delete your post, click this button:<br>
+  <form action="/<%= @post.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Post">
+  </form>
+<br>
+<a href="/category/<%=@post.category_id%>">Return to <%=@category.title%></a>

@@ -1,0 +1,19 @@
+<p>Welcome to category: <%= @category.title %></p>
+<div class="new_post">
+<p>Create a new post:</p>
+<form action="/category/<%=@category.id%>/new_post" method="post">
+  <input type="text" name="title" placeholder="Your Post Title"><br>
+  <textarea name="content">Your post content</textarea><br>
+  <input type="submit">
+</form>
+</div>
+
+<ul>
+  <% @posts.each do |p| %>
+  <li><a href=<%= "/posts/" + "#{p.id}" %>>
+    <%= p.title %></a></li>
+    <br>
+  <% end %>
+</ul>
+
+<a href="/">Return to main page</a>
